@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "endpoint",
+    "type": "java.lang.String",
+    "description": "A description for 'endpoint'"
+  },
+  {
+    "name": "endpointjson",
+    "type": "java.lang.String",
+    "description": "A description for 'endpointjson'"
+  }
+]}
