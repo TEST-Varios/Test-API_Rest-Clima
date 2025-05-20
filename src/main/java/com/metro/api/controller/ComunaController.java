@@ -4,11 +4,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -57,8 +56,7 @@ public class ComunaController {
 	
 	@GetMapping("/comuna-objeto")
 	public ComunaXml getComunasObjeto(){
-		final ComunaXml responseBody = restTemplate.getForObject(endpointjson, ComunaXml.class);		
-		return responseBody;
+		return restTemplate.getForObject(endpointjson, ComunaXml.class);
 	}
 	
 	@GetMapping("/comuna-entidad")
@@ -82,7 +80,7 @@ public class ComunaController {
 	}
 
 	@PostMapping("/comuna")
-	public Comuna createComuna(@Valid @RequestBody Comuna comuna) {
+	public Comuna createComuna(@Validated @RequestBody Comuna comuna) {
 		return comunaRepository.save(comuna);
 	}
 	
